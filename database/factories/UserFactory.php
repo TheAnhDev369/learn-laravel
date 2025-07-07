@@ -15,6 +15,8 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    //  Định nghĩa dữ liệu mẫu thông qua file UserFactory.php trong folder factories\
+    //  factories có 1 tên gọi khác là factories model
     public function definition(): array
     {
         return [
