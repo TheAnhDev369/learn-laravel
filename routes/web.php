@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-    // return view('home');
 });
 
 // Tạo Route mới
@@ -30,3 +29,6 @@ Route::get('/san-pham', function() {
     //  Thì ta lấy home, welcome,... cho vào trong return view('welcome'), view('welcome),..
     //  Tránh dùng sai như sau: returm view('home.blade') hay return view('welcome.blade.php'),...
 });
+
+//  Route sử dụng HomeController
+Route::get('/home', [HomeController::class, 'index']); // Load file resources/views/home.blade.php
