@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use \App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,14 @@ Route::get('/', function () {
 
 // Tạo Route mới
 Route::get('/unicode', function() {
+    // $user = new User();
+    //  dd(); dump and die;//    Laravel hỗ trợ sẵn
+    //  dump(): in ra thông tin của biến 1 cách đẹp mắt (debug)
+    //  die(): dừng chương trình ngay lập tức 
+    // $allUser = $user::all();
+    // dd($allUser);
+    // dd($user);// In ra giá trị của $user rồi dừng chương trình
+
     return view('home');
 });
 
