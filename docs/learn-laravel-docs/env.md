@@ -64,3 +64,17 @@
 ```php
 env('APP_NAME'); // Hoặc dùng config('app.name') trong production
 ```
+
+-   Cấu hình 2 folder:
+    +   bootstrap như cache và các file, ta cần phải phân quyền ghi
+    +   storage: kho lưu trữ có các file và folder cần ghi, với public là nơi lưu trữ file, ảnh cho users uploads, ngoài ra còn có logs, cache, session,...   
+
+-   Trong Laravel, khi ta khởi chạy 1 app (ứng dụng) thì cần có ``key``, cụ thể là ``APP_KEY``, nếu không có, app sẽ không chạy được .
+
+-   Laravel sẽ báo lỗi ``No application encryption key has been specified``.
+-   Có 2 cách khắc phục lỗi này
+    +   C1: Sử dụng luôn ``Generate app key`` sẵn của Laravel trong màn hình Debug
+    +   C2: Sử dụng lệnh ``php artisan key:generate`` trogn terminal của vscode để generate ra key trong APP_KEY
+-   Lưu ý: phải có APP_KEY=, sau đó dùng 1 trong 2 cách mới không bị lỗi đỏ như ảnh.
+-   Màn hình hiển thị giao diện debug khá đẹp do đang ở chế độ ``DEBUG``, cụ thể là ``APP_DEBUG=true``
+-   Nếu ta đặt thành ``APP_DEBUG=false``, ta sẽ không thấy giao diện đó mà chỉ thấy thông báo ``500 | server error``
