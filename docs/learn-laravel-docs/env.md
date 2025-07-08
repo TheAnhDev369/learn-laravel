@@ -78,3 +78,15 @@ env('APP_NAME'); // Hoặc dùng config('app.name') trong production
 -   Lưu ý: phải có APP_KEY=, sau đó dùng 1 trong 2 cách mới không bị lỗi đỏ như ảnh.
 -   Màn hình hiển thị giao diện debug khá đẹp do đang ở chế độ ``DEBUG``, cụ thể là ``APP_DEBUG=true``
 -   Nếu ta đặt thành ``APP_DEBUG=false``, ta sẽ không thấy giao diện đó mà chỉ thấy thông báo ``500 | server error``
+
+-   APP_ENV=local nghĩa là lá cờ, nói cách khác dùng để xác định ``môi trường hoạt động (enviroment)`` của ứng dụng
+-   Môi trường này giúp Laravel ứng xử khác nhau tuỳ theo môi trường như ``đang phát triển (local)``, ``kiểm thử (staging)`` hay ``triển khai chính thức (production)``
+
+-   Production là phiên bản hoàn thiện và cần phải deploy lên server cho khách hàng vào sử dụng.
+
+-   ``APP_ENV`` có mục đích tạo ra lá cờ, trong quá tình code các chức năng , ta có thể dựa vào đây để lựa chọn các cách phù hợp
+
+-   Sau khi thay đổi APP_KEY qua lại từ local sang prod, mỗi lần như vậy ta sẽ chạy lệnh **php artisan config:cache**    
+-   Khởi động lại server
+-   Tiếp đó chạy lệnh **php artisan env**
+-   Sau khi thao tác xong, kết quả sẽ luôn đúng với giá trị của APP_ENV mà ta thay đổi
