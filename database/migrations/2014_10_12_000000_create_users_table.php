@@ -9,6 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //  Tạo cấu trúc, lưu lại lịch sử như các sự thay đổi, tạo ra hay xoá đi, cập nhật như thế nào để sau này có thể quay lại sửa đổi tiếp
+    //  Hiểu đơn giản migrations như là git của database, khi có ai đó nhỡ xoá bảng hay dữ liệu của bảng, 
+    //  ta có thể sử dụng bản sao lưu này để back lại dữ liệu cần thiết
+    //  Tất cả mọi thứ sẽ được ghi lại trong migrations.
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
